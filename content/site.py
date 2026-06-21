@@ -1,6 +1,6 @@
 # 사이트 공통 설정 — 고양 출장마사지·홈타이 안내
-# 배포 도메인 확정 후 BASE_URL 을 실제 도메인으로 변경하세요.
-BASE_URL = "https://www.barogo-goyang.example.com"
+# 배포 도메인: Cloudflare Pages
+BASE_URL = "https://goyang-massage1.pages.dev"
 
 BRAND = "바로 GO"
 PHONE = "0508-202-4719"
@@ -9,6 +9,10 @@ PHONE_DISPLAY = "0508-202-4719"
 # 외부 문의(텔레그램) — 푸터 오렌지 버튼
 TELEGRAM_SITE = "https://t.me/googleseolab"   # 웹사이트 제작문의
 TELEGRAM_BIZ = "https://t.me/googleseolab"    # 제휴문의
+
+# IndexNow 키 — 빙·네이버·얀덱스 즉시 색인 통보용.
+# 빌드 시 루트에 "<INDEXNOW_KEY>.txt" 파일이 생성되며, 그 내용은 키와 동일해야 한다.
+INDEXNOW_KEY = "8f2c4a9e7b1d4e6fa3c5b8d201e9f7a4"
 
 # ── 지역 데이터(단일 소스) ───────────────────────────────
 # 메뉴·URL 에는 "출장마사지" 키워드를 반복하지 않는다. 지역명만 사용한다.

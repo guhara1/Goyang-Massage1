@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.barogo-goyang.example.com/sitemap.xml
+Sitemap: https://goyang-massage1.pages.dev/sitemap.xml

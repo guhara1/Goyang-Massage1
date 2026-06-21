@@ -2,6 +2,8 @@
 from .site import BASE_URL, BRAND, PHONE, PHONE_DISPLAY
 from .pricing import PRICING
 
+_NAVER = '<meta name="naver-site-verification" content="66781da1bd9405423ae2d2ee0be4bbfb42551cc0" />\n'
+
 _JSONLD = f"""<script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -193,7 +195,7 @@ PAGE = {
     "desc": "고양시 출장마사지·홈타이 예약 전 일산, 화정, 행신, 삼송, 백석, 대화 생활권을 확인하세요.",
     "h1": "고양시 출장마사지 · 고양시 홈타이 지역별 예약 안내",
     "body": _BODY,
-    "extra_head": _JSONLD,
+    "extra_head": _NAVER + _JSONLD,
     "breadcrumb": [],
     "hero": _HERO,
 }

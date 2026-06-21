@@ -46,3 +46,24 @@ python3 build.py
 2. `content/site.py`의 `TELEGRAM_SITE`/`TELEGRAM_BIZ`(제작·제휴 문의 텔레그램) 확인
 3. `python3 build.py` 재실행 (canonical·sitemap·robots.txt에 반영됨)
 4. Google Search Console에 `sitemap.xml` 제출
+
+## 색인/인덱싱 (네이버·구글·빙)
+
+빌드 시 자동 생성되는 파일:
+
+- `sitemap.xml` — 색인 대상 URL + `lastmod`
+- `rss.xml` — RSS 2.0 피드(네이버·피드 기반 발견용)
+- `robots.txt` — `Sitemap:` 라인 포함
+- `<INDEXNOW_KEY>.txt` — IndexNow 키 파일(루트)
+- 메인페이지 `<head>` 에 네이버 사이트 소유확인 메타 태그
+
+**빠른 색인 절차**
+
+1. **빙·네이버·얀덱스(IndexNow)** — 배포가 끝나(키 파일이 도메인에서 열리면) 한 번 실행:
+   ```bash
+   python3 tools/indexnow.py            # sitemap 전체 통보
+   python3 tools/indexnow.py <글 URL>   # 새 글 1건만 즉시 통보
+   ```
+2. **네이버 서치어드바이저** — 사이트 등록 후 `sitemap.xml` 과 `rss.xml` 제출. 소유확인 메타는 이미 메인에 포함.
+3. **구글** — Search Console에서 `sitemap.xml` 제출 + 주요 URL은 URL 검사 → 색인 요청.
+   - 참고: 구글은 IndexNow에 참여하지 않으며, 일반 페이지용 즉시 색인 공개 API가 없습니다(Indexing API는 공식적으로 JobPosting/방송 이벤트 전용). sitemap ping 엔드포인트도 폐지되어, 구글은 sitemap + Search Console이 정석입니다.
